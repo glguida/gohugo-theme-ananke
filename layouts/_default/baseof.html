@@ -44,6 +44,18 @@
 
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
 
+  <script>
+    window.SnipcartSettings = {
+        publicApiKey: 'YmY5N2VkNzEtYzM1ZC00YThiLWJiMDItNjc1MmE5NmM2ODUwNjM3OTkwOTYxNDA2Njk5Nzk1',
+        loadStrategy: 'on-user-interaction',
+    };
+  </script>
+  <script src="/snipcart.3.js"></script>
+
+    </script>
+
+
+
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
     <main class="pb7" role="main">
       {{ block "main" . }}{{ end }}
