@@ -13,16 +13,18 @@
 	    {{ end }}
 	  </a>
 	</li>
-          {{ range .Site.Menus.main }}
-          <li class="list f5 f4-ns f2-l fw4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
-            <a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
-              {{ .Name }}
-            </a>
-          </li>
-          {{ end }}
-	  {{ partialCached "social-follow.html" . }}
+        {{ range .Site.Menus.main }}
+        <li class="list f5 f4-ns f2-l fw4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
+          <a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+	{{ partialCached "social-follow.html" . }}
+      </ul>
     </div>
     <div class="flex-l items-center">
+      <ul class="{{ cond (eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
 	  <li class="list f3 f3-ns fw4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
 	    <a class="hover-white no-underline white-90 snipcart-checkout" href="#">
 	      <div class="w100 mw1 mw2-ns mw3-l">
@@ -33,7 +35,7 @@
 	  <li class="list f5 f4-ns f2-l fw4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
 	    <span class="snipcart-total-price white-90"></span>
 	  </li>
-        </ul>
+      </ul>
       {{ end }}
     </div>
   </div>
